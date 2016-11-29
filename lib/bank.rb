@@ -22,4 +22,14 @@ class Bank
     @balance = (@credit[0] + @balance[0])
   end
 
+  def debit_account
+    puts "What is the date today?"
+    date_today = gets.chomp
+    @date << date_today
+    puts "Please input the amount you wish to debit."
+    debit_amount = gets.chomp
+    @debit<< debit_amount.to_i
+    @balance = (@balance[0] - @debit[0])
+  end
+
 end
