@@ -4,7 +4,7 @@ describe Bank do
 
   it 'has no money on initialize' do
     bank = Bank.new
-    expect(@money).to be []
+    expect(bank.money).to eq []
   end
 
 end
