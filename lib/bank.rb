@@ -1,15 +1,25 @@
 class Bank
   def initialize
+    @row = []
     @date = []
     @credit = []
     @debit = []
     @balance = [0]
   end
 
+  def entry
+    @row << @date
+    @row << @credit
+    @row << @debit
+    @row << @balance
+  end
+
+
   def bank_statement
-    # "date || credit || debit || balance
-    # #{@date}|| #{@credit} || #{@debit} || #{@balance}
-    # "
+    puts "date || credit || debit || balance"
+    @row.each do |date, credit, debit, balance|
+      puts @row.join " || "
+    end
   end
 
   def credit_account
@@ -21,6 +31,7 @@ class Bank
     @credit << credit_amount.to_i
     @debit << " "
     @balance = (@credit[0] + @balance[0])
+    entry
   end
 
   def debit_account
@@ -32,6 +43,7 @@ class Bank
     @debit << debit_amount.to_i
     @credit << " "
     @balance = (@balance[0] - @debit[0])
+    entry
   end
 
 end
