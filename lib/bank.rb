@@ -3,7 +3,7 @@ class Bank
     @date = []
     @credit = []
     @debit = []
-    @balance = []
+    @balance = [1000]
   end
 
   def bank_statement
@@ -12,8 +12,14 @@ class Bank
     "
   end
 
-  def add_date
-
+  def credit_account
+    puts "What is the date today?"
+    date_today = gets.chomp
+    @date << date_today
+    puts "Please input the amount you wish to credit."
+    credit_amount = gets.chomp
+    @credit << credit_amount.to_i
+    @balance = (@credit[0] + @balance[0])
   end
 
 end
